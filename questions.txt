@@ -1,0 +1,21 @@
+Question 0: What is the sum of the white numbers?
+Question 1: What is the sum of the black numbers?
+Question 2: Which neighbouring tiles have the same color?
+Question 3: What is the sum of the tiles?
+Question 4: What is the sum of the 3 left-most (A,B and C-position) tiles?
+Question 5: What is the sum of the 3 right-most (C,D and E-position) tiles?
+Question 6: What is the sum of the 3 middle (B,C and D-position) tiles?
+Question 7: Which neighbouring tiles have consecutive numbers?       
+Question 8: What is the difference between the highest and lowest number?
+Question 9: Where are the #5 tiles?
+Question 10: Where are the #0 tiles?
+Question 11: Where are the #1 or #2 tiles? [need a second choice]    
+Question 12: Where are the #3 or #4 tiles? [need a second choice]    
+Question 13: Where are the #6 or #7 tiles? [need a second choice]    
+Question 14: Where are the #8 or #9 tiles? [need a second choice]    
+Question 15: How many of the tiles have a white number?
+Question 16: How many of the tiles have a black number?
+Question 17: How many odd tiles?
+Question 18: How many even tiles?
+Question 19: How many pairs of the tiles have the same number?       
+Question 20: Is the C tile (the third tile) greater than 4?
