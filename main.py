@@ -255,3 +255,5 @@ if __name__ == "__main__":
         print("#possibilities:", sz)
         if sz < 10:
             print(ps.possibilities)
+
+        if sz == 1: break
