@@ -8,17 +8,20 @@ class ProblemSolver2p:
         self.problem_solver = constraint.Problem()
         for i in range(5):
             P = chr(ord("A") + i)
+            # Domain of Number Variable
             self.problem_solver.addVariable(
                 f"N({P})", list(range(10))
             )
+            # Domain of Color Variable
             self.problem_solver.addVariable(
                 f"C({P})", ["b", "w", "g"]
             )
+            # Constraints of "5" x "g" Principle
             self.problem_solver.addConstraint(
                 lambda num, col: (num == 5 and col == "g") or (num != 5 and col != "g"),
                 [f"N({P})", f"C({P})"]
             )
-
+        # Constraints of Partial Order Principle
         for i in range(4):
             P, Q = chr(ord("A") + i), chr(ord("A") + i + 1)
             self.problem_solver.addConstraint(
@@ -36,9 +39,10 @@ class ProblemSolver2p:
                 P = chr(ord("A") + i)
                 num, col = solution[f"N({P})"], solution[f"C({P})"]
                 possibility.append(f"{num}_{col}")
-            possibilities.append(possibility)
+            possibilities.append(possibility[:])
         return possibilities
     
+    # Constraints of No Overuse Principle
     def set_self_code(self, code: List[str]):
         max_5g = 2 - code.count("5_g")
         self.problem_solver.addConstraint(
@@ -54,7 +58,7 @@ class ProblemSolver2p:
                         lambda num, col: (num != int(tile[0])) or (col != tile[-1]),
                         [f"N({P})", f"C({P})"]
                     )
-
+    # Constraints of Question-Answers
     def get_question_answer(self, index: int, second_choice: int = -1, answer = None):
         if index == 0:
             self.problem_solver.addConstraint(
